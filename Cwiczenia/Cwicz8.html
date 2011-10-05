@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1250"><title>Cwicz8</title></head>
+<body><h1 style="text-align: center;">Zadania</h1><br><hr
+ style="width: 100%; height: 2px;"><span style="font-weight: bold;">Zad.
+1 (5 p.)</span><br>Maj¹c poni¿szy skrypt w jêzyku Groovy napisac
+aplikacjê Javy, która pozwala przeliczaæ sumy podane w EUR na wybran¹
+walutê..<br>Skrypt:<br><pre>def url = 'http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'
+def rates = new XmlParser().parse(url)
+EURmap = [:]
+rates.Cube.Cube.Cube.each {
+  EURmap[it.@currency] = it.@rate.toBigDecimal()
+}
+return EURmap</pre><br><hr
+ style="width: 100%; height: 2px;"><br><span style="font-weight: bold;">Zad.
+2 (od 5 do 10 p.)</span><br>Napisaæ kalkulator, który pozwala wykonywaæ
+dowolne operacje (z nawiasami), udstepnia zestaw funkcji matematycznych
+oraz umo¿liwia dzia³ania na zmiennych, wykonywanie petli iteracyjnych
+oraz instruckji warunkowych (wybraæ sk³adniê dla instrukcji warunkowych
+i dla&nbsp;pêtli).<br>Wynikem obliczeñ mo¿e byæ pojedyñcza waeroœc lub
+zestaw wartoœci.<br>Skrypt obliczeniowy wprowadzamy w JTextArea wyniki
+ogl¹damy te¿ w JTextArea programu napisanego w Javie.<br><hr
+ style="width: 100%; height: 2px;"><br><span style="font-weight: bold;">Zad.
+3 (7 p.)</span><br>Napisaæ w Javie&nbsp; program t³umacz¹cy teksty z
+jednego jêzyka na inny.<br>Inspiracja: <br>http://blogs.bytecode.com.au/glen/2009/07/30/getting-groovy-with-google-language-translation-apis.html<br>a
+szczególnie z komentarza do postu:<br><p><a name="comment1014">Inspired
+by this nice script, I‘ve </a><a
+ href="http://groovyconsole.appspot.com/view.groovy?id=16">posted a
+variation</a> on the Groovy web console.</p> <p>It‘s using <span
+ class="caps">URL</span>Encoder and a nice trick for parsing <span
+ class="caps">JSON</span> as Groovy maps ;-)</p><p></p> <cite> <strong>
+<a href="http://gaelyk.appspot.com/"> Guillaume Laforge</a> </strong>
+on Thu, 30 Jul 2009 19:40 </cite><br><br>
+</body></html>

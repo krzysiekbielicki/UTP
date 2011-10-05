@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1250"><title>Cwicz6</title></head>
+<body><h1 style="text-align: center;">Zadania</h1><hr
+ style="width: 100%; height: 2px;"><h2>Zad. 1 (konieczne dla osob,
+które nie wykona³y jeszcze zadañ z æwiczeñ 5)</h2>- zadania z æwiczeñ 5<br><hr
+ style="width: 100%; height: 2px;"><br><h2>Zad. 2 - kalkulator (5 pkt)
+- refleksja</h2><br>Napisaæ prosty kalkulator dla liczb typu BigDecimal.<br>Obliczenia
+maj¹ byæ podawane w polu tekstowym jako:<br>liczba1 op liczba2<br>gdzie
+op jeden ze znaków +,- (minus), * (mno¿enie), / (dzielenie)<br>a wynik
+pokazywany w umieszczonej obok etykiecie.<br>Nie wolno uzywac
+instrukcji if ani switch ani while ani for ani operatora
+warunkowego.&nbsp; <br><br><hr style="width: 100%; height: 2px;"><br><h2>Zad.
+3 (trudne) - refleksja (10 pkt.)</h2><br>Stworzyæ klasê
+sparanetryzowan¹, której obiekty reprezentuj¹
+tablice liczb dowolnego typu (oprocz BigDecimal i BigInteger).<br>Klasa
+ma byæ skonstruowana w taki sposob, aby dla pliku tekstowego test.txt
+zawieraj¹cego liczby:<br>1 2 3<br>4 5 6<br>oraz liczb 100, 200, 300 w
+prowadzonych w dialogu<br>poni¿szy program:<br><pre>mport static javax.swing.JOptionPane.*;
+
+import java.io.*;
+
+public class Test {
+  
+  public static void main(String[] args) throws Exception  {
+
+    Number sum = NumArray.of("Integer").from("1 2 3").sum();
+    System.out.println(sum);
+    
+    sum = NumArray.of("Double").from("1 2 3").sum();
+    System.out.println(sum);
+    
+    sum = NumArray.of("Double").from(new File("test.txt")).sum();
+    System.out.println(sum);
+    
+    NumArray&lt;Number&gt; arr =  NumArray.of(Float.class).from( showInputDialog("Podaj liczby") );
+    System.out.println( arr.sum() );
+    
+
+  }
+
+}
+</pre>wyprowadzi³
+na konsolê:<br><br>6<br>6.0<br>21.0<br>600.0<br><hr
+ style="width: 100%; height: 2px;"><br><h2>Zad. 4 - domowe, trudne (10
+pkt.)</h2><br>Wymyœliæ ciekawe (= oszczêdzaj¹ce kodowania, czytelne,
+efektywne)
+zastosowanie generics Javy. <br><br><br><br>
+</body></html>
