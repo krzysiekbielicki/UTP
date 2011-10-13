@@ -3,6 +3,7 @@ package pl.edu.pjestk.s8267.utp.lab1;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
@@ -10,6 +11,7 @@ public class CountriesTableModel implements TableModel {
 
 	private List<Country> data;
 	private String[] columns = new String[] {"Państwo", "Stolica", "Populacja", "Flaga"};
+	private TableModelListener modelListener;
 
 	public CountriesTableModel(List<Country> list) {
 		this.data = list;
@@ -31,6 +33,8 @@ public class CountriesTableModel implements TableModel {
 		if(data == null)
 			data = new ArrayList<Country>();
 		data.add(c);
+		int row = data.size();
+		modelListener.tableChanged(new TableModelEvent(this, row-1, row, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
 	}
 
 	@Override
@@ -80,8 +84,7 @@ public class CountriesTableModel implements TableModel {
 
 	@Override
 	public void addTableModelListener(TableModelListener l) {
-		// TODO Auto-generated method stub
-
+		this.modelListener = l;
 	}
 
 	@Override
