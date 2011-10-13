@@ -1,24 +1,26 @@
 package pl.edu.pjestk.s8267.utp.lab1;
 
-public class Country {
-	private String name;
-	private String capitol;
+import java.io.Serializable;
+
+public class Country implements Serializable {
+	private String countryName;
+	private String capital;
 	private long population;
-	private String code;
+	private String countryCode;
 	
 	public Country(String name, String capitol, long population, String code) {
-		this.name = name;
-		this.capitol = capitol;
+		this.countryName = name;
+		this.capital = capitol;
 		this.population = population;
-		this.code = code;
+		this.countryCode = code;
 	}
 
 	public String getName() {
-		return name;
+		return countryName;
 	}
 
 	public String getCapitol() {
-		return capitol;
+		return capital;
 	}
 
 	public long getPopulation() {
@@ -27,6 +29,6 @@ public class Country {
 
 	public String getCountryCode() {
 		// TODO Auto-generated method stub
-		return code;
+		return countryCode;
 	}
 }

@@ -1,6 +1,7 @@
 package pl.edu.pjestk.s8267.utp.lab1;
 
 import java.awt.Component;
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 import javax.swing.JLabel;
@@ -15,8 +16,7 @@ public class FlagRenderer implements TableCellRenderer {
 		try {
 			return new Flag((String) value);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (IOException e) {
 		}
 		return new JLabel((String) value);
 	}

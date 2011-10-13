@@ -1,5 +1,6 @@
 package pl.edu.pjestk.s8267.utp.lab1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.event.TableModelListener;
@@ -16,12 +17,20 @@ public class CountriesTableModel implements TableModel {
 
 	@Override
 	public int getRowCount() {
+		if(data == null)
+			return 0;
 		return data.size();
 	}
 
 	@Override
 	public int getColumnCount() {
 		return columns.length;
+	}
+	
+	public void addRow(Country c) {
+		if(data == null)
+			data = new ArrayList<Country>();
+		data.add(c);
 	}
 
 	@Override
@@ -48,6 +57,8 @@ public class CountriesTableModel implements TableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
+		if(data == null)
+			return null;
 		switch(columnIndex) {
 		case 0:
 			return data.get(rowIndex).getName();

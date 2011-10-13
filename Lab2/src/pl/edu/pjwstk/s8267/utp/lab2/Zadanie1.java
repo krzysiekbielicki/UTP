@@ -32,24 +32,31 @@ public class Zadanie1 {
 					String file = "";
 					while((line = br.readLine()) != null)
 						file += line +"\n";
+					br.close();
 					
-					Pattern p = Pattern.compile("\\s+if\\(.+\\)");
-			        Matcher m = p.matcher(file);
+					Pattern p = Pattern.compile("wariant");
+					Matcher m = p.matcher(file);
+					int war = 0;
+					while(m.find()) {
+						war++;
+					}
+
+					file = file.replaceAll("/\\*(?:.|[\\n\\r])*?\\*/", "");
+					file = file.replaceAll("//.*\n", "");
+					file = file.replaceAll("if", "\nif");
+					System.out.println("-----------\n"+file+"\n---------");
+					p = Pattern.compile("\\s*(if)\\s*(\\(.+\\))");
+			        m = p.matcher(file);
 			        int ifs = 0;
 			        while(m.find()) {
+			        	System.out.println(m.group());
 			        	ifs++;
 			        }
-			        p = Pattern.compile("wariant");
-			        m = p.matcher(file);
-			        int war = 0;
-			        while(m.find()) {
-			        	war++;
-			        }
-			        br.close();
 			        String rep = (System.getProperty("os.name").equals("Linux")?"/tmp/":"C:/Temp/")+selectedFile.getName()+".rep";
 			        FileWriter fw = new FileWriter(rep);
 			        fw.write("Liczba instrukcji if: "+ifs+"\nLiczba napisów: "+war);
 			        fw.close();
+			        JOptionPane.showMessageDialog(null, "Liczba instrukcji if: "+ifs+"\nLiczba napisów: "+war);
 			        JOptionPane.showMessageDialog(null, "Zapisano plik raportu w "+rep);
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
