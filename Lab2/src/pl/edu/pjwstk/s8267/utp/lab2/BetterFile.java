@@ -136,13 +136,17 @@ public class BetterFile extends File {
 		return copy(this, new File(newName), preserveTime);
 	}
 	
-	public ArrayList<String> readLines() throws IOException {
+	public ArrayList<String> readLines() throws RuntimeException {
 		ArrayList<String> ret = new ArrayList<String>();
-		BufferedReader br = new BufferedReader(new FileReader(this));
-		String line;
-		while((line = br.readLine()) != null)
-			ret.add(line);
-		br.close();
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(this));
+			String line;
+			while((line = br.readLine()) != null)
+				ret.add(line);
+			br.close();
+		} catch(IOException e) {
+			throw(new RuntimeException("Something went wrong. Cannot read file."));
+		}
 		return ret;
 	}
 	
