@@ -1,6 +1,7 @@
 package pl.edu.pjwstk.s8267.utp.lab4;
 
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,23 +9,24 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Zadanie2 {
 	public static void main(String[] args) {
 
 		Map<String, List<String>> m = new HashMap<String, List<String>>();
 		try {
-			Scanner s = new Scanner(new File("unixdict.txt"));
-			while (s.hasNext()) {
-				String word = s.next();
-				char[] ch = word.toCharArray();
+			BufferedReader br = new BufferedReader(new FileReader("unixdict.txt"));
+			String line;
+			while ((line = br.readLine()) != null) {
+				char[] ch = line.toCharArray();
 				Arrays.sort(ch);
-				String sorted = new String(ch);
-				List<String> l = m.get(sorted);
+				String s = new String(ch);
+				List<String> l = m.get(s);
 				if (l == null)
-					m.put(sorted, l = new ArrayList<String>());
-				l.add(word);
+					m.put(s, l = new ArrayList<String>());
+				l.add(line);
 
 			}
 
@@ -43,9 +45,13 @@ public class Zadanie2 {
 			for (List<String> l : top) {
 				System.out.println("Liczba anagramów - " + l.size() + ": " + l);
 			}
+			
+			String word = JOptionPane.showInputDialog("podaj słowo");
+			char[] ch = word.toCharArray();
+			Arrays.sort(ch);
+			System.out.println(m.get(new String(ch)));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 }

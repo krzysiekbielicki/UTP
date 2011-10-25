@@ -1,85 +1,185 @@
 <!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
-<html
- lang="pl"><head> <meta http-equiv="Content-Type"
- content="text/html; charset=Windows1250"> <meta name="GENERATOR"
- content="Mozilla/4.61 [en] (OS/2; I) [Netscape]"><!-- (c) Krzysztof Barteczko -->
-<title>Zadania</title><style type="text/css" media="screen">
+<html lang="pl"><head>
+ <meta http-equiv="Content-Type" content="text/html; charset=Windows1250"> <meta name="GENERATOR" content="Mozilla/4.61 [en] (OS/2; I) [Netscape]"><!-- (c) Krzysztof Barteczko --><title>Zadania</title>
+<style type="text/css" media="screen">
 <!--
 pre { background-color: #fffff7; color: black; display: block; white-space: pre; border: 1px solid #800000; padding:2% }
 -->
-  </style></head>
-<body><center><b>Zadania (kolekcje)<br>
+  </style></head><body><center><b>Zadania (kolekcje)<br>
 </b><div align="left">
-<br><hr size="2" width="100%"><br>
-<b>Zadanie 1 (max 3 pkt.)</b><br>
-<br>Wczyta? plik tekstowy&nbsp; i &nbsp;policzy? ile razy wyst?puj? w
-nim poszczególne s?owa.<br><br>Raport wypisa? na konsoli w
-alfabetycznej kolejno?ci s?ów w postaci:<br>s?owo1 liczba_wyst?pie?<br>s?owo2
-liczba_wyst?pie?<br>....<br><br>np.<br>w pliku&nbsp;mamy:<br><br>Ala ma
-kota i psa i kota i psa,<br>psa (ale nie kota). ? ? ? ?<br><br>wynik:<br><br>Ala
-1<br>ale 1<br>? 1<br>? 1<br>? 1<br>i 3<br>kota 3<br>ma 1<br>nie 1<br>psa
-3<br>? 1<br><br>Uwaga:
-obliczanie ma by? efektywne, a program zwi?z?y (podpowied?: nalezy
-zastosowa? map?) . Za programy nie
-spe?niaj?ce tych warunków (cho? dzia?aj?ce poprawnie) obni?am punktacj?.<br><br><span
- style="font-weight: bold; color: rgb(204, 0, 0);"></span><span
- style="font-weight: bold;">Pomoc</span>: komparator, który porównuje
-s?owa w kolejno?ci alfabetycznej w danym j?zyku &nbsp;mo?na uzyska?
-przez odwo?anie<br><br>&nbsp;&nbsp;&nbsp; <span
- style="font-weight: bold;">Collator.getInstance(new
-Locale(kod_j?zyka)); </span><br><br>gdzie dla j?zyka polskiego kodem
+<br><hr size="2" width="100%"><b>Zadanie 1 (max 3 pkt.)</b><br>
+
+
+<br>
+Wczyta&#263; plik tekstowy&nbsp; i &nbsp;policzy&#263; ile razy 
+wyst&#281;puj&#261; w nim poszczególne s&#322;owa.<br>
+<br>
+Raport wypisa&#263; na konsoli w 
+alfabetycznej kolejno&#347;ci s&#322;ów w postaci:<br>
+s&#322;owo1 liczba_wyst&#261;pie&#324;<br>
+s&#322;owo2
+ liczba_wyst&#261;pie&#324;<br>
+....<br>
+<br>
+np.<br>
+w pliku tekst.txt mamy:<br>
+<br>
+Ala
+ ma kota i psa i kota i psa,<br>
+psa (ale nie kota). &#261; &#260; &#263; &#347;<br>
+<br>
+wynik:<br>
+<br>
+Ala
+ 1<br>
+ale 1<br>
+&#261; 1<br>
+&#260; 1<br>
+&#263; 1<br>
+i 3<br>
+kota 3<br>
+ma 1<br>
+nie 1<br>
+psa
+ 3<br>
+&#347; 1<br>
+<br>
+Uwaga:
+obliczanie ma by&#263; efektywne, a program zwi&#281;z&#322;y (podpowied&#378;: nalezy 
+zastosowa&#263; map&#281;) . Za programy nie
+spe&#322;niaj&#261;ce tych warunków (cho&#263; dzia&#322;aj&#261;ce poprawnie) obni&#380;am punktacj&#281;.<br>
+<br>
+<span style="font-weight: bold; color: rgb(204, 0, 0);">Programy nie 
+spe&#322;niaj&#261;ce wymaganej formy wyniku otrzymuj&#261; 0 punktów.</span><br>
+<br>
+<span style="font-weight: bold;">Pomoc</span>: komparator, który porównuje 
+s&#322;owa w kolejno&#347;ci alfabetycznej w danym j&#281;zyku &nbsp;mo&#380;na uzyska&#263; przez 
+odwo&#322;anie<br>
+<br>
+&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Collator.getInstance(new
+ Locale(kod_j&#281;zyka)); </span><br>
+<br>
+gdzie dla j&#281;zyka polskiego kodem 
 jest "pl".<br>
-<b><br></b><hr style="width: 100%; height: 2px;"><b><br>
+
+<b><br>
+
+
+</b>
+<hr style="width: 100%; height: 2px;"><b><br>
+
+
 Zad 2 (max. 7 p.)<br>
-</b><br>W&nbsp;pliku tekstowym znajduj? si? dane o zakupach klientów w
+
+
+</b><br>
+
+
+W&nbsp;pliku tekstowym znajduj&#261; si&#281; dane o zakupach klientów w 
 postaci:<br>
-<br>id_klienta; nazwisko i imi?; nazwa_towaru;cena;zakupiona_ilo??<br>
-<br>Identyfikator klienta ma posta?<br>cNNNNN<br>gdzie N cyfra ze
-zbioru [0...9]<br>
-np.<br>c00001;Kowalski Jan;bu?ka;2;100<br><br>
-Wczyta? dane z pliku i wypisa? na konsoli w kolejnych wierszach:<ul><li>poprzedzone
-napisem "Nazwiska" dane posortowane
-wg nazwisk w porz?dku rosn?cym (porz?dek rekordów z tymi samymi
-nazwiskami jest okre?lany przez identyfikatory klientów - rosn?co),</li>
-<li>poprzedzone napisem "Koszty" dane posortowane wg <span
- style="font-weight: bold;">kosztów zakupów</span>
-w porz?dku malej?cym (porz?dek rekordów z tymi samymi kosztami jest
-okre?lany przez identyfikatory klientów - rosn?co) z dodatkowym
-dopiskiem na ko?cu w nawiasach:&nbsp; koszty: &nbsp;kosztZakupu (np.
-(koszt: 200.0)),</li> <li>poprzedzone napisem "Klient 1" dane o
-wszystkich
-zakupach&nbsp; klienta &nbsp;o identyfikatorze "c00001" (w odr?bnych
-wierszach)</li><li>poprzedzone
-napisem "Klient 2" - w odr?bnych wierszach -dane o wszystkich
+
+
+<br>
+id_klienta; nazwisko i imi&#281;; nazwa_towaru;cena;zakupiona_ilo&#347;&#263;<br>
+
+
+<br>
+Identyfikator klienta ma posta&#263;<br>
+cNNNNN<br>
+gdzie N cyfra ze zbioru
+ [0...9]<br>
+
+
+np.<br>
+c00001;Kowalski Jan;bu&#322;ka;2;100<br>
+<br>
+
+
+Wczyta&#263; dane z pliku i wypisa&#263; na konsoli w kolejnych wierszach:
+<ul>
+<li>poprzedzone
+ napisem "Nazwiska" dane posortowane
+wg nazwisk w porz&#261;dku rosn&#261;cym (porz&#261;dek rekordów z tymi samymi
+nazwiskami jest okre&#347;lany przez identyfikatory klientów - rosn&#261;co),</li><li>poprzedzone napisem "Koszty" dane posortowane wg <span style="font-weight: bold;">kosztów zakupów</span>
+w porz&#261;dku malej&#261;cym (porz&#261;dek rekordów z tymi samymi kosztami jest
+okre&#347;lany przez identyfikatory klientów - rosn&#261;co) z dodatkowym
+dopiskiem na ko&#324;cu w nawiasach:&nbsp; koszty: &nbsp;kosztZakupu (np.
+(koszt: 200.0)),</li><li>poprzedzone napisem "Klient 1" dane o wszystkich
+zakupach&nbsp; klienta &nbsp;o identyfikatorze "c00001" (w odr&#281;bnych wierszach)</li><li>poprzedzone
+napisem
+ "Klient 2" - w odr&#281;bnych wierszach -dane o wszystkich
 zakupach&nbsp; klienta &nbsp;o identyfikatorze "c00002" &nbsp;(w
-odrebnych wierszach) (a wi?c uwaga: w pliku musz? by? klienci o
+odrebnych wierszach) (a wi&#281;c uwaga: w pliku musz&#261; by&#263; klienci o
 identyfikatorach c00001 i c00002)</li>
-</ul><br>Np. dla pliku w postaci:<br>c00004;Nowak Anna;banany;4;50<br>c00003;Kowalski
-Jan;mleko;4;5<br>c00001;Kowalski Jan;mleko;4;10<br>c00001;Kowalski
-Jan;mleko;5;2<br>c00002;Malina Jan;mleko;4;2<br>c00002;Malina
-Jan;chleb;3;5<br>c00001;Kowalski Jan;bulka;2;100<br><br>posta? wyniku
-na konsoli winna by? nastepuj?ca:<br><br>Nazwiska<br>c00001;Kowalski
-Jan;mleko;4.0;10.0<br>c00001;Kowalski Jan;mleko;5.0;2.0<br>c00001;Kowalski
-Jan;bulka;2.0;100.0<br>c00003;Kowalski Jan;mleko;4.0;5.0<br>c00002;Malina
-Jan;mleko;4.0;2.0<br>c00002;Malina Jan;chleb;3.0;5.0<br>c00004;Nowak
-Anna;banany;4.0;50.0<br><br>Koszty<br>c00001;Kowalski
-Jan;bulka;2.0;100.0 (koszt: 200.0)<br>c00004;Nowak Anna;banany;4.0;50.0
-(koszt: 200.0)<br>c00001;Kowalski Jan;mleko;4.0;10.0 (koszt: 40.0)<br>c00003;Kowalski
-Jan;mleko;4.0;5.0 (koszt: 20.0)<br>c00002;Malina Jan;chleb;3.0;5.0
-(koszt: 15.0)<br>c00001;Kowalski Jan;mleko;5.0;2.0 (koszt: 10.0)<br>c00002;Malina
-Jan;mleko;4.0;2.0 (koszt: 8.0)<br><br>Klient 1<br>c00001;Kowalski
-Jan;mleko;4.0;10.0<br>c00001;Kowalski Jan;mleko;5.0;2.0<br>c00001;Kowalski
-Jan;bulka;2.0;100.0<br><br>Klient 2<br>c00002;Malina Jan;mleko;4.0;2.0<br>c00002;Malina
-Jan;chleb;3.0;5.0<br><br><span
- style="font-weight: bold; color: rgb(204, 0, 0);">Uwaga: programy nie
-daj?ce pokazanej formy wydruku otrzymuj? 0 punktów.</span><br><br>
-Niezb?dne jest stworzenie klasy, opisuj?cej zakupy klientów i
-operowanie na jej obiektach. Nie przyjmuj? rozwi?za? dzia?aj?cych na
-"surowych" Stringach.<br>Wyszukiwanie
-zakupów klienta po jego identyfikatorze ma by? zrealizowane jako metoda
-z argumentem = identyfikator klienta. Metoda ta ma dzia?a? dla
-dowolnych klientów i zapewnia? b. szybkie, efektywne wyszukiwanie
-(podpowied? - u?y? mapy)..<br><br><span
- style="font-weight: bold; color: rgb(204, 0, 0);"></span><br>
-</div></center>
-<center></center></body></html>
+</ul>
+<br>
+Np. dla pliku w postaci:<br>
+c00004;Nowak Anna;banany;4;50<br>
+c00003;Kowalski
+ Jan;mleko;4;5<br>
+c00001;Kowalski Jan;mleko;4;10<br>
+c00001;Kowalski 
+Jan;mleko;5;2<br>
+c00002;Malina Jan;mleko;4;2<br>
+c00002;Malina 
+Jan;chleb;3;5<br>
+c00001;Kowalski Jan;bulka;2;100<br>
+<br>
+posta&#263; wyniku na
+ konsoli winna by&#263; nastepuj&#261;ca:<br>
+<br>
+Nazwiska<br>
+c00001;Kowalski 
+Jan;mleko;4.0;10.0<br>
+c00001;Kowalski Jan;mleko;5.0;2.0<br>
+c00001;Kowalski
+ Jan;bulka;2.0;100.0<br>
+c00003;Kowalski Jan;mleko;4.0;5.0<br>
+c00002;Malina
+ Jan;mleko;4.0;2.0<br>
+c00002;Malina Jan;chleb;3.0;5.0<br>
+c00004;Nowak 
+Anna;banany;4.0;50.0<br>
+<br>
+Koszty<br>
+c00001;Kowalski 
+Jan;bulka;2.0;100.0 (koszt: 200.0)<br>
+c00004;Nowak Anna;banany;4.0;50.0 
+(koszt: 200.0)<br>
+c00001;Kowalski Jan;mleko;4.0;10.0 (koszt: 40.0)<br>
+c00003;Kowalski
+ Jan;mleko;4.0;5.0 (koszt: 20.0)<br>
+c00002;Malina Jan;chleb;3.0;5.0 
+(koszt: 15.0)<br>
+c00001;Kowalski Jan;mleko;5.0;2.0 (koszt: 10.0)<br>
+c00002;Malina
+ Jan;mleko;4.0;2.0 (koszt: 8.0)<br>
+<br>
+Klient 1<br>
+c00001;Kowalski 
+Jan;mleko;4.0;10.0<br>
+c00001;Kowalski Jan;mleko;5.0;2.0<br>
+c00001;Kowalski
+ Jan;bulka;2.0;100.0<br>
+<br>
+Klient 2<br>
+c00002;Malina Jan;mleko;4.0;2.0<br>
+c00002;Malina
+ Jan;chleb;3.0;5.0<br>
+<br>
+<span style="font-weight: bold; color: rgb(204, 0, 0);">Uwaga: programy nie daj&#261;ce pokazanej formy wydruku 
+otrzymuj&#261; 0 punktów.</span><br>
+<br>
+
+
+Niezb&#281;dne jest stworzenie klasy, opisuj&#261;cej zakupy klientów i
+operowanie na jej obiektach. Nie przyjmuj&#281; rozwi&#261;za&#324; dzia&#322;aj&#261;cych na
+"surowych" Stringach.<br>
+Wyszukiwanie
+zakupów klienta po jego identyfikatorze ma by&#263; zrealizowane jako metoda
+z argumentem = identyfikator klienta. Metoda ta ma dzia&#322;a&#263; dla
+dowolnych klientów i zapewnia&#263; b. szybkie, efektywne wyszukiwanie 
+(podpowied&#378; - u&#380;y&#263; mapy)..<br>
+<br>
+<span style="font-weight: bold; color: rgb(204, 0, 0);"></span></div></center><br>
+</body></html>

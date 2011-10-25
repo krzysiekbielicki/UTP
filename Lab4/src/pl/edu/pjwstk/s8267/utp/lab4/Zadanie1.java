@@ -2,7 +2,6 @@ package pl.edu.pjwstk.s8267.utp.lab4;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
