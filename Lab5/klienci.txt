@@ -1,0 +1,7 @@
+c00004;Nowak Anna;banany;4;50
+c00003;Kowalski Jan;mleko;4;5
+c00001;Kowalski Jan;mleko;4;10
+c00001;Kowalski Jan;mleko;5;2
+c00002;Malina Jan;mleko;4;2
+c00002;Malina Jan;chleb;3;5
+c00001;Kowalski Jan;bulka;2;100
